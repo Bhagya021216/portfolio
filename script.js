@@ -33,7 +33,7 @@ function initializeTheme() {
     body.style.transition = 'all 0.3s ease';
 }
 // Profile title rotation
-const titles = ['Full Stack Developer', 'Networking', 'Fast Learner', 'Cybersecurity Enthusiast'];
+const titles = ['Cybersecurity Enthusiast','Networking', 'Fast Learner'];
 let titleIndex = 0;
 function rotateTitle() {
     const profileTitle = document.querySelector('.profile-title');
