@@ -3,39 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>John Doe - Full Stack Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Portfolio</a>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                    <span id="themeText">Dark</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Your introduction here...</p>
-            <p>im bhagya nethmini bla bla bla..</p>
-        </section>
-        
-        <section id="projects">
-            <h2>My Projects</h2>
-            <!-- Project items will go here -->
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch...</p>
-        </section>
-    </main>
-    
-    <script src="js/script.js"></script>
+        </div>
+    </nav>
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-img-container">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Profile Picture" class="profile-img">
+                <div class="status-dot"></div>
+            </div>
+            <h2 class="profile-name">John Doe</h2>
+            <p class="profile-title">Full Stack Developer</p>
+            <div class="profile-info">
+                <div class="profile-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>bhagyakapuge@gmail.com</span>
+                </div>
+                <div class="profile-info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="profile-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>New York, NY</span>
+                </div>
+                <div class="profile-info-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span>January 15, 1995</span>
+                </div>
+                <div class="profile-info-item">
+                    <i class="fas fa-globe"></i>
+                    <span>www.johndoe.dev</span>
+                </div>
+            </div>
+            <div class="cv-download">
+                <a href="john_doe_cv.pdf" download class="cv-download-btn">
+                    <i class="fas fa-file-download"></i> Download CV
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <!-- Right Content -->
+        <div class="content">
+            <!-- Home Section -->
+            <section id="home" class="home-section">
+                <video autoplay muted loop playsinline>
+                    <source src="https://your-host.com/blue-corporate-background.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="home-content">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p>I'm John Doe, a passionate Full Stack Developer. Explore my work and skills below!</p>
+                    <a href="#about">Learn More About Me</a>
+                </div>
+            </section>
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>Hello! I'm John Doe, a passionate Full Stack Developer with over 5 years of experience in creating dynamic and responsive web applications. I specialize in modern JavaScript frameworks and have a strong background in both front-end and back-end technologies.</p>
+                    <p>My journey in web development started during my computer science studies, and since then, I've been continuously learning and adapting to new technologies. I'm passionate about writing clean, efficient code and creating user-centered digital experiences.</p>
+                    <p>When I'm not coding, you can find me exploring new hiking trails, reading tech blogs, or contributing to open-source projects. I believe in the power of collaboration and am always excited to work on challenging projects that make a positive impact.</p>
+                </div>
+            </section>
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - 2022</div>
+                        <h3 class="timeline-title">Bachelor of Computer Science</h3>
+                        <div class="timeline-subtitle">University of Technology</div>
+                        <p>Graduated Magna Cum Laude with a focus on Software Engineering and Web Development. Completed senior capstone project on machine learning applications in web development.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3 class="timeline-title">Full Stack Web Development Bootcamp</h3>
+                        <div class="timeline-subtitle">TechAcademy</div>
+                        <p>Intensive 6-month program covering modern web development technologies including React, Node.js, and database management. Built 5 full-stack applications during the program.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3 class="timeline-title">Master of Software Engineering (Part-time)</h3>
+                        <div class="timeline-subtitle">Tech University</div>
+                        <p>Currently pursuing advanced studies in software architecture, cloud computing, and DevOps practices while working full-time as a developer.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-bar-container">
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">JavaScript</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">React</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Node.js</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Python</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Cybersecurity</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Communication</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Teamwork</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Problem Solving</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Adaptability</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Web Development</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Database Management</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">API Integration</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label">Cloud Computing</div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Certifications Section -->
+            <section id="certifications" class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <h3 class="timeline-title">AWS Certified Developer - Associate</h3>
+                        <div class="timeline-subtitle">Amazon Web Services</div>
+                        <img src="https://images.unsplash.com/photo-1616531770192-306265e6d8ef?w=300&h=150&fit=crop" alt="AWS Certification" class="certification-image">
+                        <p>Demonstrated proficiency in developing and maintaining applications on the AWS platform, including serverless computing and cloud storage solutions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">React Developer Certification</h3>
+                        <div class="timeline-subtitle">Meta (Facebook)</div>
+                        <img src="https://images.unsplash.com/photo-1633356122544-f1348f59914c?w=300&h=150&fit=crop" alt="React Certification" class="certification-image">
+                        <p>Comprehensive certification covering React fundamentals, advanced patterns, testing, and performance optimization techniques.</p>
+                    </div>
+                    <div class="timeline-item hidden">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">Google Analytics Certified</h3>
+                        <div class="timeline-subtitle">Google</div>
+                        <img src="https://images.unsplash.com/photo-1516321310762-37d8faffadac?w=300&h=150&fit=crop" alt="Google Analytics Certification" class="certification-image">
+                        <p>Certified in Google Analytics implementation, data analysis, and conversion tracking for web applications.</p>
+                    </div>
+                    <div class="timeline-item hidden">
+                        <div class="timeline-date">2021</div>
+                        <h3 class="timeline-title">MongoDB Developer Path</h3>
+                        <div class="timeline-subtitle">MongoDB University</div>
+                        <img src="https://images.unsplash.com/photo-1593720216276-0b7d0190f4d3?w=300&h=150&fit=crop" alt="MongoDB Certification" class="certification-image">
+                        <p>Completed comprehensive training in MongoDB database design, query optimization, and deployment strategies.</p>
+                    </div>
+                </div>
+                <div class="certification-nav">
+                    <button class="cert-nav-btn" onclick="prevCertifications()" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <button class="cert-nav-btn" onclick="nextCertifications()"><i class="fas fa-chevron-right"></i> Next</button>
+                </div>
+            </section>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="no-projects">No projects yet</div>
+            </section>
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>bhagyakapuge@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>New York, NY</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Usually within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project or just say hello!" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <p class="confidentiality-text">* I promise the confidentiality of your personal information</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 John Doe. All rights reserved. | Designed with ❤️ and lots of ☕</p>
+            <p>Video by <a href="https://www.vecteezy.com/video/30935217" target="_blank">Vecteezy</a></p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
