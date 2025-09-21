@@ -3,38 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Bhagya Nethmini </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">3H46Y4</a>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                    <span id="themeText">Dark</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Your introduction here...</p>
-        </section>
-        
-        <section id="projects">
-            <h2>My Projects</h2>
-            <!-- Project items will go here -->
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch...</p>
-        </section>
-    </main>
-    
-    <script src="js/script.js"></script>
+        </div>
+    </nav>
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-img-container">
+                <img src="https://github.com/Bhagya021216/portfolio/blob/develop/images/pp.png?raw=true" alt="Profile Picture" class="profile-img">
+                <div class="status-dot" ></div>
+            </div>
+            <h2 class="profile-name">Bhagya Nethmini</h2>
+            <p class="profile-title">Cybersecurity Enthusiast</p>
+            <div class="profile-info">
+                <div class="profile-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>bhagyakapuge@gmail.com</span>
+                </div>
+                <div class="profile-info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+94 717595312</span>
+                </div>
+                <div class="profile-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Matara,Sri Lanka</span>
+                </div>
+                <!--<div class="profile-info-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span>January 15, 1995</span>
+                </div>-->
+                
+                <div class="profile-info-item">
+                    <i class="fas fa-globe"></i>
+                    <span>www.example.com</span>
+                </div>
+            </div>
+            <div class="cv-download">
+                <a href="https://drive.google.com/uc?export=download&id=1wRUMvPq1HMLSsQSQCQ-s6RZy35ow2JKV" download class="cv-download-btn">
+                    <i class="fas fa-file-download"></i> Download CV
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Bhagya021216" target="_blank" Class="social-link" ><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/bhagyanethmini " target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/share/15UhKwHL9V/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <!-- Right Content -->
+        <div class="content">
+            <!-- Home Section -->
+            <section id="home" class="home-section">
+                <div class="home-content">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p>I'm Bhagya Nethmini, Undergraduate in BICT at USJP. <br/>Explore my work and skills below!</p><br/>
+                    <a href="#about">Learn More About Me</a>
+                </div>
+            </section>
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>"I’m an undergraduate student at the University of Sri Jayewardenepura, 
+                        pursuing a BICT degree with a focus on Networking and a growing passion for Cybersecurity. 
+                        My interests include network security, ethical hacking, and digital forensics, 
+                        and I’m eager to gain hands-on experience through projects, collaborations, and internships."</p>
+                   
+                </div>
+            </section>
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - present</div>
+                        <h3 class="timeline-title">Bachelor of Information communication technology</h3>
+                        <div class="timeline-subtitle">University of Sri Jayewardenepura</div>
+                        <p>I am currently pursuing my Bachelor's degree in ICT at the University of Sri Jayewardenepura, Sri Lanka. 
+                            I have completed a number of modules in the field of ICT, including programming, web development, mobile app development, networking , database management and so on. 
+                            I'm learning specialize to networking . I am also a member of the ICT society of the university, 
+                            where I have participated in a number of events and workshops.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 A/l</div>
+                        <h3 class="timeline-title">GCE Advanced Level</h3>
+                        <div class="timeline-subtitle">Technology stream</div>
+                        <p>I did my A Levels in technology stream (Engineering Technology),
+                            I got 7th place in Matara District and 40th place in all Island with
+                            scoring 3 A's and 2.7025 z-score, which allowed me to enter 
+                            the University of Sri Jayewardenepura, Sri Lanka.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-container">
+                    <!-- Soft Skills -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Soft Skills</h3>
+                        <div class="skills-bar-container">
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Communication</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Adaptability</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Team Work</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Criticle Thinking</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="75%"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- Hard Skills -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Hard Skills</h3>
+                        <div class="skills-bar-container">
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Networking</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Cybersecurity</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="50%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-label">Web development</div>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" data-width="30%"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Certifications Section -->
+            <section id="certifications" class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jul 2024</div>
+                        <h3 class="timeline-title">Basic networking</h3>
+                        <div class="timeline-subtitle">Great Learning Support</div>
+                        <img src="https://github.com/Bhagya021216/portfolio/blob/develop/images/basic%20networking.jpg?raw=true" alt="Basic Network Certification" class="certification-image">
+                        <p>Completed a foundational course on computer networking, covering core concepts such
+                             as network topologies, protocols, IP addressing, and communication models. Built a 
+                            strong base for understanding how devices connect and interact in modern networks.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr 2025</div>
+                        <h3 class="timeline-title">Introduction to cybersecurity</h3>
+                        <div class="timeline-subtitle">Cisco Networking Academy</div>
+                        <img src="https://github.com/Bhagya021216/portfolio/blob/develop/images/Screenshot%20(143).png?raw=true" alt="Introduction to cybersecurity Certification" class="certification-image">
+                        <p>Achieved student-level credential in cybersecurity fundamentals.
+                             Covered cyber safety, common threats, online protection strategies, 
+                            and organizational security practices. Explored different career paths in cybersecurity.</p>
+                    </div>
+                    <div class="timeline-item hidden">
+                        <div class="timeline-date">May 2025</div>
+                        <h3 class="timeline-title">Introduction to the threat Landscape 3.0</h3>
+                        <div class="timeline-subtitle">Fortinet</div>
+                        <img src="https://github.com/Bhagya021216/portfolio/blob/develop/images/Screenshot%20(142).png?raw=true" alt="Certification" class="certification-image">
+                        <p>Learned about the evolving cyber threat landscape, attack techniques, and defensive strategies. 
+                            Built awareness of threat actors, malware trends, and enterprise-level cybersecurity frameworks.</p>
+                    </div>
+                    <div class="timeline-item hidden">
+                        <div class="timeline-date">Sep 2025</div>
+                        <h3 class="timeline-title">Linux For Absolute Beginners</h3>
+                        <div class="timeline-subtitle">KodeKloud</div>
+                        <img src="https://github.com/Bhagya021216/portfolio/blob/develop/images/Screenshot%20(138).png?raw=true" alt=" Certification" class="certification-image">
+                        <p>Gained hands-on experience with Linux fundamentals, including file system navigation, basic commands, 
+                            user management, and shell scripting essentials. Developed practical skills to confidently work in Linux environments.</p>
+                    </div>
+                    <div class="timeline-item hidden">
+                        <div class="timeline-date">Sep 2025</div>
+                        <h3 class="timeline-title">CompTIA Security+</h3>
+                        <div class="timeline-subtitle">KodeKloud</div>
+                        <img src="https://github.com/Bhagya021216/portfolio/blob/develop/images/Screenshot%20(139).png?raw=true" alt=" Certification" class="certification-image">
+                        <p>Completed comprehensive training aligned with CompTIA Security+ standards. 
+                            Explored cybersecurity principles including risk management, cryptography, secure networking, 
+                            and threat detection. Strengthened readiness for real-world IT security challenges.</p>
+                    </div>
+                </div>
+                <div class="certification-nav">
+                    <button class="cert-nav-btn" onclick="prevCertifications()" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <button class="cert-nav-btn" onclick="nextCertifications()"><i class="fas fa-chevron-right"></i> Next</button>
+                </div>
+            </section>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="no-projects">No projects yet</div>
+            </section>
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>bhagyakapuge@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+94 717595312</p>
+                            </div>
+                        </div>
+                        <!--<div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>New York, NY</p>
+                            </div>
+                        </div>-->
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Usually within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project or just say hello!" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <p class="confidentiality-text">* I promise the confidentiality of your personal information</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 John Doe. All rights reserved. | Designed with ❤️ and lots of ☕</p>
+           
+            
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
