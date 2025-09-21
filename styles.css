@@ -186,6 +186,11 @@ body.light-mode .confidentiality-text { color: #666; }
 body.light-mode .cert-nav-btn { background: #007bff; }
 body.light-mode .cert-nav-btn:hover { background: #0056b3; }
 body.light-mode .cert-nav-btn:disabled { background: #ccc; }
+
+/* Light mode home section paragraph styling */
+body.light-mode .home-content p {
+    color: black;
+}
 /* Footer */
 .footer { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px); color: white; padding: 1rem; margin-top: 4rem; }
 .footer-bottom { text-align: center; color: #888; }
