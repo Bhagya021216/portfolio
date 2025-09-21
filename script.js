@@ -1,6 +1,6 @@
 // Initialize EmailJS with your Public Key
 (function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+    emailjs.init("5lgJSYvICI7-MaJhj"); // Replace with your EmailJS Public Key
 })();
 
 // Theme toggle functionality
@@ -18,7 +18,6 @@ function toggleTheme() {
     themeIcon.style.transform = 'rotate(360deg)';
     setTimeout(() => { themeIcon.style.transform = 'rotate(0deg)'; }, 300);
     try { localStorage.setItem('theme', newTheme); } catch (e) { console.log('localStorage not available'); }
-    adjustVideoPosition();
 }
 function initializeTheme() {
     const body = document.body;
@@ -67,24 +66,7 @@ function setActiveLink() {
         }
     });
 }
-// Video positioning
-function adjustVideoPosition() {
-    const video = document.querySelector('.home-section video');
-    const profileImg = document.querySelector('.profile-img');
-    const cvDownload = document.querySelector('.cv-download');
-    if (video && profileImg && cvDownload) {
-        const profileImgRect = profileImg.getBoundingClientRect();
-        const cvDownloadRect = cvDownload.getBoundingClientRect();
-        const topPosition = profileImgRect.top + (profileImgRect.height / 2);
-        const bottomPosition = cvDownloadRect.bottom;
-        const height = bottomPosition - topPosition;
-        video.style.top = `${topPosition}px`;
-        video.style.height = `${height}px`;
-        video.style.left = '0';
-        video.style.right = '0';
-        video.style.width = '100%';
-    }
-}
+// Video positioning function removed - no longer needed
 // Certifications navigation
 let currentCertIndex = 0;
 const certsPerPage = 2;
@@ -154,7 +136,7 @@ function handleSubmit(event) {
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
     // Send email via EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', data)
+    emailjs.send('service_vfw06ze', 'template_o58r6p9', data)
         .then(function(response) {
             submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
             submitBtn.style.background = '#28a745';
@@ -205,12 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillsSection = document.querySelector('#skills');
     skillsObserver.observe(skillsSection);
     setActiveLink();
-    adjustVideoPosition();
     updateCertifications();
 });
 window.addEventListener('scroll', setActiveLink);
 window.addEventListener('resize', () => {
-    adjustVideoPosition();
     updateCertifications();
 });
 function createParticles() {
@@ -254,11 +234,9 @@ window.addEventListener('load', () => {
     initializeTheme();
     createParticles();
     rotateTitle();
-    adjustVideoPosition();
     updateCertifications();
 });
 window.addEventListener('resize', () => {
     const navMenu = document.getElementById('navMenu');
     navMenu.classList.remove('active');
-    adjustVideoPosition();
 });

@@ -13,11 +13,33 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 /* Main Container */
 .main-container { display: flex; min-height: 100vh; padding-top: 80px; gap: 2rem; max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
 /* Home Section */
-.home-section { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; border-radius: 20px; margin-bottom: 2rem; overflow: hidden; }
-.home-section video { position: absolute; top: 0; left: 0; right: 0; width: 100%; object-fit: cover; z-index: 0; }
-.home-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); border-radius: 20px; z-index: 1; }
+.home-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 .home-content { position: relative; z-index: 2; }
-.home-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: colorWave 3s ease-in-out infinite;
+}
 .home-content p { font-size: 1.2rem; margin-bottom: 2rem; }
 .home-content a { padding: 1rem 2rem; background: #007bff; color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s ease; }
 .home-content a:hover { background: #0056b3; transform: translateY(-2px); }
@@ -45,6 +67,15 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 .content { flex: 1; margin-bottom: 2rem; z-index: 2; }
 .section { background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 3rem; margin-bottom: 2rem; scroll-margin-top: 100px; animation: fadeIn 0.5s ease-in; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Color Wave Animation for Welcome Text */
+@keyframes colorWave {
+    0% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    25% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    50% { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    75% { background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #667eea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+}
 .section-title { font-size: 2.5rem; color: #333; margin-bottom: 2rem; position: relative; display: inline-block; }
 .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px; background: linear-gradient(to right, #667eea, #764ba2); border-radius: 2px; }
 /* About Section */
@@ -163,9 +194,16 @@ body.light-mode .footer-bottom { color: #666; }
     .main-container { flex-direction: column; padding-left: 1rem; padding-right: 1rem; }
     .sidebar { flex: none; position: static; margin-bottom: 2rem; }
     .contact-container { grid-template-columns: 1fr; gap: 2rem; }
-    .home-section { height: 60vh; }
+    .home-section {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: 60vh;
+        min-height: 300px;
+    }
     .home-content h1 { font-size: 2rem; }
     .home-content p { font-size: 1rem; }
-    .home-section video { top: 0; height: 100%; }
     .certification-nav { flex-direction: column; gap: 0.5rem; }
 }
