@@ -85,7 +85,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 /* Skills Section with Progress Bars */
 .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
 .skills-category { background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
-.skills-category-title { font-size: 1.5rem; color: #f2f5f8; margin-bottom: 1.5rem; text-align: center; }
+.skills-category-title { font-size: 1.5rem; color: #ffffff; margin-bottom: 1.5rem; text-align: center; }
 .skills-bar-container { margin-top: 1rem; }
 .skill-bar-item { margin-bottom: 1.5rem; }
 .skill-bar-label { font-weight: bold; margin-bottom: 0.5rem; color: #333; }
