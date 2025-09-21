@@ -125,18 +125,21 @@ document.querySelectorAll('.nav-link').forEach(link => {
 function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
+     // Get current date
+    const currentDate = new Date().toLocaleString();
     const data = {
         name: formData.get('name'),
         email: formData.get('email'),
         subject: formData.get('subject'),
-        message: formData.get('message')
+        message: formData.get('message'),
+        date: currentDate
     };
     const submitBtn = event.target.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
     // Send email via EmailJS
-    emailjs.send('service_vfw06ze', 'template_o58r6p9', data)
+    emailjs.send('service_0a8cafb', 'template_aj7tlt1', data)
         .then(function(response) {
             submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
             submitBtn.style.background = '#28a745';
