@@ -83,7 +83,10 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
 /* About Section */
 .about-content { font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 2rem; }
 /* Skills Section with Progress Bars */
-.skills-bar-container { margin-top: 2rem; }
+.skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+.skills-category { background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+.skills-category-title { font-size: 1.5rem; color: #f2f5f8; margin-bottom: 1.5rem; text-align: center; }
+.skills-bar-container { margin-top: 1rem; }
 .skill-bar-item { margin-bottom: 1.5rem; }
 .skill-bar-label { font-weight: bold; margin-bottom: 0.5rem; color: #333; }
 .skill-bar { background: #e9ecef; height: 10px; border-radius: 5px; overflow: hidden; }
@@ -150,6 +153,8 @@ body.dark-mode .form-group input:focus, body.dark-mode .form-group textarea:focu
 body.dark-mode .form-group label { color: #e0e0e0; }
 body.dark-mode .nav-menu { background: rgba(0, 0, 0, 0.3); }
 body.dark-mode .skill-bar-label { color: #e0e0e0; }
+body.dark-mode .skills-category { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); }
+body.dark-mode .skills-category-title { color: #007bff; }
 body.dark-mode .no-projects { color: #b0b0b0; }
 body.dark-mode .confidentiality-text { color: #b0b0b0; }
 body.dark-mode .cert-nav-btn { background: #007bff; }
@@ -207,5 +212,8 @@ body.light-mode .footer-bottom { color: #666; }
     }
     .home-content h1 { font-size: 2rem; }
     .home-content p { font-size: 1rem; }
+    .skills-container { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-category { padding: 1.5rem; }
+    .skills-category-title { font-size: 1.3rem; }
     .certification-nav { flex-direction: column; gap: 0.5rem; }
 }
