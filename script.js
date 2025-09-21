@@ -69,7 +69,7 @@ function setActiveLink() {
 // Video positioning function removed - no longer needed
 // Certifications navigation
 let currentCertIndex = 0;
-const certsPerPage = 2;
+const certsPerPage = 1;
 const timelineItems = document.querySelectorAll('#certifications .timeline-item');
 function updateCertifications() {
     timelineItems.forEach((item, index) => {
