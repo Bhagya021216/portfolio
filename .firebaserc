@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "project01-69532",
+    "staging": "project01-69532"
+  },
+  "targets": {},
+  "etags": {}
+}
