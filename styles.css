@@ -45,7 +45,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height
     animation: colorWave 3s ease-in-out infinite;
 }
 .home-content p { font-size: 1.2rem; margin-bottom: 2rem; }
-.home-content a { padding: 1rem 2rem; background: #007bff; color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s ease; }
+.home-content a { padding: 0.75rem 1.5rem; background: #007bff; color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s ease; }
 .home-content a:hover { background: #0056b3; transform: translateY(-2px); }
 /* Left Sidebar */
 .sidebar { flex: 0 0 300px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 20px; padding: 2rem; height: fit-content; position: sticky; top: 100px; border: 1px solid rgba(255, 255, 255, 0.2); z-index: 3; }
@@ -186,6 +186,9 @@ body.light-mode .confidentiality-text { color: #666; }
 body.light-mode .cert-nav-btn { background: #007bff; }
 body.light-mode .cert-nav-btn:hover { background: #0056b3; }
 body.light-mode .cert-nav-btn:disabled { background: #ccc; }
+body.light-mode .skills-category-title { color: #333; }
+body.light-mode .skills-category { border: 2px solid #ddd; }
+body.light-mode .home-section { border: 2px solid #ddd; }
 
 /* Light mode home section paragraph styling */
 body.light-mode .home-content p {
