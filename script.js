@@ -23,8 +23,8 @@ function initializeTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('themeIcon');
     const themeText = document.getElementById('themeText');
-    let initialTheme = 'light';
-    try { initialTheme = localStorage.getItem('theme') || 'light'; } catch (e) { console.log('localStorage not available'); }
+    let initialTheme = 'dark';
+    try { initialTheme = localStorage.getItem('theme') || 'dark'; } catch (e) { console.log('localStorage not available'); }
     body.classList.add(initialTheme + '-mode');
     themeIcon.className = initialTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     themeText.textContent = initialTheme === 'dark' ? 'Light' : 'Dark';
@@ -233,11 +233,39 @@ function createParticles() {
     }
     animateParticles();
 }
+// Loading screen functionality
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const mainContainer = document.querySelector('.main-container');
+    const navbar = document.querySelector('.navbar');
+    const footer = document.querySelector('.footer');
+
+    // Hide loading screen
+    loadingScreen.classList.add('hidden');
+
+    // Show main content with fade-in effect
+    setTimeout(() => {
+        mainContainer.classList.add('loaded');
+        navbar.classList.add('loaded');
+        footer.classList.add('loaded');
+    }, 500);
+
+    // Remove loading screen from DOM after animation
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+    }, 1000);
+}
+
+// Initialize loading screen
 window.addEventListener('load', () => {
-    initializeTheme();
-    createParticles();
-    rotateTitle();
-    updateCertifications();
+    // Simulate loading time (you can adjust this or remove it)
+    setTimeout(() => {
+        hideLoadingScreen();
+        initializeTheme();
+        createParticles();
+        rotateTitle();
+        updateCertifications();
+    }, 2000); // 2 second loading time
 });
 window.addEventListener('resize', () => {
     const navMenu = document.getElementById('navMenu');
